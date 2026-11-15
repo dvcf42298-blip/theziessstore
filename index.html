@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#7c3aed" />
+  <title>TheziessStore - Free Fire Top Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --primary-purple: #8b3dff;
+      --primary-purple-dark: #7328f0;
+      --light-purple: #f3ebff;
+      --bg-gradient: linear-gradient(180deg, #f8f5ff 0%, #ffffff 100%);
+      --text-dark: #1e1e2f;
+      --text-gray: #7c7c94;
+      --card-shadow: 0 8px 20px rgba(139, 61, 255, 0.08);
+      --soft-border: #f0e6ff;
+      --success: #16a34a;
+      --warning: #ef4444;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', 'Kantumruy Pro', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg-gradient); color: var(--text-dark); max-width: 480px;
+      margin: 0 auto; min-height: 100vh; box-shadow: 0 0 30px rgba(0,0,0,.05);
+      padding-bottom: 150px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input { font: inherit; }
+
+    header {
+      display: flex; align-items: center; justify-content: space-between; padding: 15px 20px;
+      background: rgba(255,255,255,.95); backdrop-filter: blur(8px); position: sticky; top: 0;
+      z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,.03); border-bottom: 1px solid rgba(139,61,255,.05);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo {
+      width: 45px; height: 45px; border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--primary-purple); box-shadow: 0 5px 16px rgba(139,61,255,.2);
+    }
+    .brand-info h1 { font-size: 18px; font-weight: 700; line-height: 1.2; }
+    .brand-info h1 span { color: var(--primary-purple); }
+    .brand-info p { font-size: 10px; color: var(--text-gray); letter-spacing: 1px; font-weight: 600; text-transform: uppercase; }
+    .menu-btn {
+      width: 40px; height: 40px; border-radius: 12px; border: 1px solid #eee; background: #fff;
+      color: var(--primary-purple); font-size: 18px; cursor: pointer;
+    }
+    .container { padding: 15px 20px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text-gray); font-size: 14px; margin-bottom: 12px; font-weight: 600; }
+    .game-banner { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding: 10px 0; }
+    .game-banner img { width: 68px; height: 68px; border-radius: 18px; object-fit: cover; box-shadow: var(--card-shadow); border: 2px solid rgba(139,61,255,.12); }
+    .game-details .publisher { font-size: 11px; color: var(--text-gray); font-weight: 700; text-transform: uppercase; letter-spacing: .7px; }
+    .game-details h2 { font-size: 20px; font-weight: 800; margin: 2px 0 6px; }
+    .game-tags { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 12px; color: var(--text-gray); }
+    .badge-instant, .badge-safe { padding: 3px 8px; border-radius: 20px; font-weight: 700; font-size: 11px; }
+    .badge-instant { background: #e6f9ed; color: var(--success); }
+    .badge-safe { background: #eef2ff; color: #4f46e5; }
+    .step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+    .step-number {
+      width: 28px; height: 28px; background: var(--primary-purple); color: #fff; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;
+      box-shadow: 0 10px 22px rgba(139,61,255,.2); flex: 0 0 auto;
+    }
+    .step-header h3 { font-size: 17px; font-weight: 800; }
+    .card-box { background: var(--white); border-radius: 20px; padding: 20px; box-shadow: var(--card-shadow); margin-bottom: 25px; border: 1px solid var(--soft-border); }
+    .input-label { font-size: 13px; font-weight: 700; margin-bottom: 8px; display: block; }
+    .player-input { width: 100%; padding: 14px 15px; border: 2px solid rgba(139,61,255,.7); border-radius: 14px; font-size: 16px; outline: none; color: var(--text-dark); font-weight: 700; background: #fff; }
+    .player-input:focus { box-shadow: 0 0 0 4px rgba(139,61,255,.08); }
+    .player-input::placeholder { color: #c4b5fd; font-weight: 500; }
+    .example-text { font-size: 12px; color: var(--text-gray); margin: 8px 0 15px; line-height: 1.4; }
+    .check-btn { background: #f8f5ff; border: 1px solid #e9d5ff; color: var(--text-gray); padding: 10px 18px; border-radius: 12px; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: .2s ease; }
+    .check-btn:hover { background: var(--light-purple); color: var(--primary-purple); }
+    #player-name-result { margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--success); display: none; }
+    #player-name-result.error { color: var(--warning); }
+    .category-title { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 800; margin: 20px 0 12px; }
+    .count-pill { background: var(--light-purple); color: var(--primary-purple); padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 700; }
+    .package-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .package-card { background: #fff; border-radius: 18px; padding: 15px 10px; text-align: center; border: 2px solid transparent; box-shadow: var(--card-shadow); cursor: pointer; position: relative; transition: all .2s ease; user-select: none; }
+    .package-card:hover { transform: translateY(-2px); }
+    .package-card.selected { border-color: var(--primary-purple); background: #faf6ff; box-shadow: 0 10px 24px rgba(139,61,255,.12); }
+    .check-circle { position: absolute; top: 10px; left: 10px; width: 20px; height: 20px; border-radius: 50%; background: #f3f4f6; color: #d1d5db; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; }
+    .package-card.selected .check-circle { background: var(--primary-purple); color: #fff; }
+    .tag-badge { position: absolute; top: 10px; right: 10px; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 800; color: #fff; }
+    .tag-pass { background: #a855f7; } .tag-hot { background: #ec4899; } .tag-best { background: #8b5cf6; }
+    .package-card img { width: 55px; height: 55px; object-fit: contain; margin: 10px auto 8px; filter: drop-shadow(0 8px 18px rgba(139,61,255,.12)); }
+    .package-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .old-price { font-size: 11px; color: var(--warning); text-decoration: line-through; display: block; margin-bottom: 2px; font-weight: 600; }
+    .package-price { font-size: 15px; font-weight: 800; color: var(--primary-purple); }
+    .payment-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .payment-card { background: #fff; border-radius: 16px; border: 1px solid var(--soft-border); padding: 14px 10px; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; transition: .2s ease; text-align: center; }
+    .payment-card:hover { border-color: rgba(139,61,255,.5); box-shadow: 0 8px 18px rgba(139,61,255,.08); }
+    .payment-card.selected { border: 2px solid var(--primary-purple); background: #faf6ff; }
+    .payment-card .icon { width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center; background: var(--light-purple); color: var(--primary-purple); font-size: 18px; }
+    .payment-card span { font-size: 12px; font-weight: 700; color: var(--text-dark); }
+    .summary-box { background: linear-gradient(180deg,#f9f4ff 0%,#fff 100%); border: 1px solid var(--soft-border); border-radius: 18px; padding: 18px 16px; box-shadow: var(--card-shadow); }
+    .summary-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px; margin-bottom: 10px; color: var(--text-gray); }
+    .summary-row strong { color: var(--text-dark); font-weight: 800; text-align: right; overflow-wrap: anywhere; }
+    .summary-total { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(139,61,255,.1); font-size: 16px; font-weight: 800; }
+    .summary-total .price { color: var(--primary-purple); font-size: 20px; }
+    .floating-chat { position: fixed; bottom: 135px; right: max(15px, calc((100vw - 480px)/2 + 15px)); display: flex; align-items: center; gap: 10px; z-index: 90; }
+    .chat-bubble { background: #fff; padding: 8px 14px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,.12); display: flex; align-items: center; gap: 8px; font-size: 11px; border: 1px solid #f3ebff; font-weight: 700; color: var(--text-gray); }
+    .online-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 0 4px rgba(34,197,94,.18); }
+    .tg-icon { width: 32px; height: 32px; background: linear-gradient(135deg,#1ea4ff,#0088cc); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 18px rgba(0,136,204,.26); font-size: 14px; }
+    .checkout-bar { position: fixed; left: 50%; transform: translateX(-50%); bottom: 18px; width: min(96%,480px); background: rgba(255,255,255,.96); border: 1px solid rgba(139,61,255,.12); backdrop-filter: blur(10px); box-shadow: 0 -10px 30px rgba(0,0,0,.08); border-radius: 20px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; z-index: 120; }
+    .checkout-price { display: flex; flex-direction: column; gap: 2px; }
+    .checkout-price .label { font-size: 11px; color: var(--text-gray); font-weight: 600; text-transform: uppercase; letter-spacing: .7px; }
+    .checkout-price .value { font-size: 20px; font-weight: 800; color: var(--primary-purple); }
+    .pay-btn { background: linear-gradient(135deg,var(--primary-purple),var(--primary-purple-dark)); color: #fff; border: none; padding: 14px 22px; border-radius: 14px; font-size: 14px; font-weight: 700; cursor: pointer; letter-spacing: .5px; box-shadow: 0 18px 26px rgba(139,61,255,.22); transition: .2s ease; }
+    .pay-btn:hover { transform: translateY(-1px); }
+    @media (max-width: 360px) { .package-grid,.payment-grid { grid-template-columns: 1fr; } .checkout-bar { padding: 10px 12px; } .pay-btn { padding: 12px 16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img class="brand-logo" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=120&q=80" alt="TheziessStore logo">
+      <div class="brand-info"><h1>Theziess<span>Store</span></h1><p>Fast Top Up</p></div>
+    </div>
+    <button class="menu-btn" type="button" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+  </header>
+
+  <main class="container">
+    <a href="#" class="back-link" onclick="history.back(); return false;"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    <section class="game-banner" aria-label="Free Fire">
+      <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=200&q=80" alt="Free Fire game">
+      <div class="game-details"><div class="publisher">Garena</div><h2>Free Fire</h2><div class="game-tags"><span class="badge-instant">Instant</span><span class="badge-safe">Safe</span></div></div>
+    </section>
+
+    <section aria-labelledby="player-heading">
+      <div class="step-header"><div class="step-number">1</div><h3 id="player-heading">Player ID</h3></div>
+      <div class="card-box">
+        <label class="input-label" for="player-id">Player ID / Nickname</label>
+        <input id="player-id" class="player-input" type="text" placeholder="Type your player name or ID" autocomplete="off">
+        <div class="example-text">Example: 87812345 or S25.Ariel</div>
+        <button class="check-btn" id="check-player-btn" type="button"><i class="fa-solid fa-circle-check"></i> Check ID</button>
+        <div id="player-name-result" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="package-heading">
+      <div class="step-header"><div class="step-number">2</div><h3 id="package-heading">Select Package</h3></div>
+      <div class="category-title">Top Up Packages <span class="count-pill">6</span></div>
+      <div class="package-grid" id="package-grid">
+        <button class="package-card selected" type="button" data-price="5.00" aria-pressed="true"><span class="check-circle"><i class="fa-solid fa-check"></i></span><span class="tag-badge tag-pass">PASS</span><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=160&q=80" alt=""><div class="package-name">50 Diamonds</div><span class="old-price">$7.00</span><div class="package-price">$5.00</div></button>
+        <button class="package-card" type="button" data-price="10.00" aria-pressed="false"><span class="check-circle"><i class="fa-solid fa-check"></i></span><span class="tag-badge tag-hot">HOT</span><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=160&q=80" alt=""><div class="package-name">70 Diamonds</div><span class="old-price">$15.00</span><div class="package-price">$10.00</div></button>
+        <button class="package-card" type="button" data-price="18.00" aria-pressed="false"><span class="check-circle"><i class="fa-solid fa-check"></i></span><span class="tag-badge tag-best">BEST</span><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=160&q=80" alt=""><div class="package-name">140 Diamonds</div><span class="old-price">$22.00</span><div class="package-price">$18.00</div></button>
+        <button class="package-card" type="button" data-price="32.00" aria-pressed="false"><span class="check-circle"><i class="fa-solid fa-check"></i></span><span class="tag-badge tag-pass">PASS</span><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=160&q=80" alt=""><div class="package-name">355 Diamonds</div><span class="old-price">$42.00</span><div class="package-price">$32.00</div></button>
+        <button class="package-card" type="button" data-price="55.00" aria-pressed="false"><span class="check-circle"><i class="fa-solid fa-check"></i></span><span class="tag-badge tag-hot">HOT</span><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=160&q=80" alt=""><div class="package-name">500 Diamonds</div><span class="old-price">$70.00</span><div class="package-price">$55.00</div></button>
+        <button class="package-card" type="button" data-price="90.00" aria-pressed="false"><span class="check-circle"><i class="fa-solid fa-check"></i></span><span class="tag-badge tag-best">BEST</span><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=160&q=80" alt=""><div class="package-name">720 Diamonds</div><span class="old-price">$120.00</span><div class="package-price">$90.00</div></button>
+      </div>
+    </section>
+
+    <section aria-labelledby="payment-heading">
+      <div class="step-header" style="margin-top:28px"><div class="step-number">3</div><h3 id="payment-heading">Payment</h3></div>
+      <div class="card-box"><div class="payment-grid" id="payment-grid">
+        <button class="payment-card selected" type="button" data-method="ABA Pay" aria-pressed="true"><span class="icon"><i class="fa-solid fa-wallet"></i></span><span>ABA Pay</span></button>
+        <button class="payment-card" type="button" data-method="Bank" aria-pressed="false"><span class="icon"><i class="fa-solid fa-building-columns"></i></span><span>Bank</span></button>
+        <button class="payment-card" type="button" data-method="QR Pay" aria-pressed="false"><span class="icon"><i class="fa-solid fa-qrcode"></i></span><span>QR Pay</span></button>
+        <button class="payment-card" type="button" data-method="Card" aria-pressed="false"><span class="icon"><i class="fa-solid fa-credit-card"></i></span><span>Card</span></button>
+      </div></div>
+    </section>
+
+    <section aria-labelledby="summary-heading">
+      <div class="step-header"><div class="step-number">4</div><h3 id="summary-heading">Order Summary</h3></div>
+      <div class="summary-box">
+        <div class="summary-row"><span>Package</span><strong id="summary-package">50 Diamonds</strong></div>
+        <div class="summary-row"><span>Player ID</span><strong id="summary-player">Not yet checked</strong></div>
+        <div class="summary-row"><span>Payment</span><strong id="summary-payment">ABA Pay</strong></div>
+        <div class="summary-total"><span>Total</span><span class="price" id="summary-price">$5.00</span></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-chat"><div class="chat-bubble"><span class="online-dot"></span>Online support</div><a href="https://t.me/" class="tg-icon" aria-label="Contact on Telegram"><i class="fa-brands fa-telegram"></i></a></div>
+  <div class="checkout-bar"><div class="checkout-price"><span class="label">Total</span><span class="value" id="checkout-price">$5.00</span></div><button class="pay-btn" id="pay-btn" type="button">Pay Now</button></div>
+
+  <script>
+    const packageCards = [...document.querySelectorAll('.package-card')];
+    const paymentCards = [...document.querySelectorAll('.payment-card')];
+    const playerInput = document.getElementById('player-id');
+    const result = document.getElementById('player-name-result');
+    let playerChecked = false;
+
+    const formatMoney = value => `$${Number(value).toFixed(2)}`;
+    const selectedPackage = () => document.querySelector('.package-card.selected');
+    const selectedPayment = () => document.querySelector('.payment-card.selected');
+
+    function updateSummary() {
+      const pack = selectedPackage();
+      const player = playerInput.value.trim();
+      document.getElementById('summary-package').textContent = pack.querySelector('.package-name').textContent;
+      document.getElementById('summary-player').textContent = playerChecked && player ? player : 'Not yet checked';
+      document.getElementById('summary-payment').textContent = selectedPayment().dataset.method;
+      document.getElementById('summary-price').textContent = formatMoney(pack.dataset.price);
+      document.getElementById('checkout-price').textContent = formatMoney(pack.dataset.price);
+    }
+
+    packageCards.forEach(card => card.addEventListener('click', () => {
+      packageCards.forEach(item => { item.classList.remove('selected'); item.setAttribute('aria-pressed', 'false'); });
+      card.classList.add('selected'); card.setAttribute('aria-pressed', 'true'); updateSummary();
+    }));
+
+    paymentCards.forEach(card => card.addEventListener('click', () => {
+      paymentCards.forEach(item => { item.classList.remove('selected'); item.setAttribute('aria-pressed', 'false'); });
+      card.classList.add('selected'); card.setAttribute('aria-pressed', 'true'); updateSummary();
+    }));
+
+    playerInput.addEventListener('input', () => {
+      playerChecked = false;
+      result.style.display = 'none';
+      result.classList.remove('error');
+      updateSummary();
+    });
+
+    document.getElementById('check-player-btn').addEventListener('click', () => {
+      const value = playerInput.value.trim();
+      result.style.display = 'block';
+      if (!value) {
+        playerChecked = false;
+        result.textContent = '⚠️ Please enter your Player ID / Nickname first.';
+        result.classList.add('error');
+      } else {
+        // This is only a front-end input check; it does not verify the ID with Garena.
+        playerChecked = true;
+        result.textContent = '✅ ID entered. Please make sure it matches your Free Fire account.';
+        result.classList.remove('error');
+      }
+      updateSummary();
+    });
+
+    document.getElementById('pay-btn').addEventListener('click', () => {
+      const player = playerInput.value.trim();
+      if (!player) {
+        result.style.display = 'block';
+        result.textContent = '⚠️ Please enter your Player ID before continuing.';
+        result.classList.add('error');
+        playerInput.focus();
+        return;
+      }
+      alert('Demo only — no real payment is processed.\n\nPlayer ID: ' + player + '\nPackage: ' + selectedPackage().querySelector('.package-name').textContent + '\nPayment: ' + selectedPayment().dataset.method + '\nTotal: ' + formatMoney(selectedPackage().dataset.price));
+    });
+
+    updateSummary();
+  </script>
+</body>
+</html>
